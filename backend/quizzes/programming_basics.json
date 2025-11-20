@@ -1,0 +1,40 @@
+{
+  "title": "Programming Basics Quiz",
+  "questions": [
+    {
+      "question": "Which language is primarily used for web development?",
+      "answers": ["Python", "C++", "HTML", "Java"],
+      "answer_index": 2
+    },
+    {
+      "question": "What does 'HTTP' stand for?",
+      "answers": [
+        "HyperText Transfer Protocol",
+        "HighText Transfer Protocol",
+        "HyperText Transmission Process",
+        "High Transmission Text Protocol"
+      ],
+      "answer_index": 0
+    },
+    {
+      "question": "Which of the following is a JavaScript framework?",
+      "answers": ["Django", "Laravel", "React", "Rails"],
+      "answer_index": 2
+    },
+    {
+      "question": "What symbol is used to denote an ID in CSS?",
+      "answers": [".", "#", "*", "&"],
+      "answer_index": 1
+    },
+    {
+      "question": "Which one is NOT a programming paradigm?",
+      "answers": [
+        "Object-oriented",
+        "Functional",
+        "Procedural",
+        "Declarative UI"
+      ],
+      "answer_index": 3
+    }
+  ]
+}

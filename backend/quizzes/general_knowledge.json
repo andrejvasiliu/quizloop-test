@@ -1,0 +1,25 @@
+{
+  "title": "General Knowledge Quiz",
+  "questions": [
+    {
+      "question": "What is the capital of France?",
+      "answers": ["Paris", "Rome", "Madrid", "Berlin"],
+      "answer_index": 0
+    },
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "answers": ["Earth", "Mars", "Jupiter", "Venus"],
+      "answer_index": 1
+    },
+    {
+      "question": "Who wrote the play 'Romeo and Juliet'?",
+      "answers": [
+        "Leo Tolstoy",
+        "William Shakespeare",
+        "Mark Twain",
+        "Jane Austen"
+      ],
+      "answer_index": 1
+    }
+  ]
+}

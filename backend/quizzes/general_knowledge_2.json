@@ -1,0 +1,35 @@
+{
+  "title": "General Knowledge Quiz 2",
+  "questions": [
+    {
+      "question": "What is the capital of Australia?",
+      "answers": ["Sydney", "Melbourne", "Canberra", "Perth"],
+      "answer_index": 2
+    },
+    {
+      "question": "Which planet is known as the Red Planet?",
+      "answers": ["Earth", "Mars", "Jupiter", "Saturn"],
+      "answer_index": 1
+    },
+    {
+      "question": "Who wrote 'Romeo and Juliet'?",
+      "answers": [
+        "William Shakespeare",
+        "Mark Twain",
+        "Charles Dickens",
+        "Jane Austen"
+      ],
+      "answer_index": 0
+    },
+    {
+      "question": "How many continents are there on Earth?",
+      "answers": ["5", "6", "7", "8"],
+      "answer_index": 2
+    },
+    {
+      "question": "Which language has the most native speakers?",
+      "answers": ["English", "Mandarin Chinese", "Spanish", "Hindi"],
+      "answer_index": 1
+    }
+  ]
+}
