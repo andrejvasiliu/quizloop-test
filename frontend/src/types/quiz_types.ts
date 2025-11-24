@@ -20,6 +20,10 @@ export interface Quiz extends QuizListItem {
   questions: QuizQuestion[];
 }
 
+export interface QuizResponse {
+  quiz: Quiz;
+}
+
 export interface ResultsState {
   quizTitle: string;
   questions: QuizQuestion[];

@@ -14,8 +14,10 @@ function ResultsPage() {
 
   const { quizTitle, questions, answers } = state;
 
-  const score = answers.reduce((acc, answerIndex, i) => {
-    return acc + (answerIndex === questions[i].answer_index ? 1 : 0);
+  const score = questions.reduce((acc, question, i) => {
+    const selectedAnswer = answers[i];
+    const selected = question.answers.find((ans) => ans.id === selectedAnswer);
+    return acc + (selected?.is_correct ? 1 : 0);
   }, 0);
 
   return (
@@ -27,18 +29,24 @@ function ResultsPage() {
       <h2>Review</h2>
       <div>
         {questions.map((question, index) => {
-          const correctIndex = question.answer_index;
-          const userIndex = answers[index];
+          const selectedAnswerID = answers[index];
+          const selectedAnswer = question.answers.find(
+            (ans) => ans.id === selectedAnswerID
+          );
+          const correctAnswer = question.answers.find((ans) => ans.is_correct);
+
           return (
-            <Card>
+            <Card key={question.id ?? index}>
               <CardHeader>
                 <CardTitle>{question.question}</CardTitle>
               </CardHeader>
               <CardContent>
-                Your answer: {question.answers[userIndex]}{" "}
-                {userIndex === correctIndex ? "✅" : "❌"}
-                {userIndex !== correctIndex && (
-                  <p>Correct answer: {question.answers[correctIndex]}</p>
+                Your answer: {selectedAnswer?.text}{" "}
+                {selectedAnswer?.is_correct ? "✅" : "❌"}
+                {!selectedAnswer?.is_correct && (
+                  <p>
+                    Correct answer: <strong>{correctAnswer?.text}</strong>
+                  </p>
                 )}
               </CardContent>
             </Card>

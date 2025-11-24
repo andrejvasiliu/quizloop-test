@@ -2,7 +2,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { API_QUIZ_URL } from "../config";
-import type { Quiz } from "../types/quiz_types";
+import type { Quiz, QuizResponse, ResultsState } from "../types/quiz_types";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
@@ -28,7 +28,7 @@ function QuizPage() {
   useEffect(() => {
     const fetchQuiz = async () => {
       try {
-        const response = await axios.post<{ quiz: Quiz }>(
+        const response = await axios.post<QuizResponse>(
           `${API_QUIZ_URL}/${quiz_id}`,
           {},
           {
@@ -66,7 +66,7 @@ function QuizPage() {
           quizTitle: quiz.title,
           questions: quiz.questions,
           answers: updatedAnswers,
-        },
+        } satisfies ResultsState,
       });
     }
   };
@@ -87,10 +87,13 @@ function QuizPage() {
             value={selectedOption?.toString() || ""}
             onValueChange={(val) => setSelectedOption(Number(val))}
           >
-            {currentQuestion.answers.map((ans, i) => (
-              <div key={i}>
-                <RadioGroupItem value={i.toString()} id={`option-${i}`} />
-                <Label htmlFor={`option-${i}`}>{ans}</Label>
+            {currentQuestion.answers.map((ans) => (
+              <div key={ans.id}>
+                <RadioGroupItem
+                  value={ans.id.toString()}
+                  id={`option-${ans.id}`}
+                />
+                <Label htmlFor={`option-${ans.id}`}>{ans.text}</Label>
               </div>
             ))}
           </RadioGroup>
